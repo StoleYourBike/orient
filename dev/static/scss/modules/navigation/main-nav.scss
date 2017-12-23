@@ -1,0 +1,37 @@
+.c-menu {
+   margin: 0;
+   padding: 0;
+
+   &__item {
+      display: inline-block;
+      padding-left: 30px;
+      padding-right: 30px;
+
+      &:first-child {
+         padding-left: 0;
+      }
+
+      &:last-child {
+         padding-right: 0;
+      }
+   }
+
+   &__link {
+      display: block;
+      font-size: rem($c-menu-fontSize);
+      font-family: $g-nav-font;
+      color: $g-title-color;
+      position: relative;
+      transition: .25s ease-in-out;
+      
+      &:hover {
+         color: $black;
+         text-decoration: none;
+      }
+   }
+
+   &__text {
+      position: relative;
+      z-index: 1;
+   }
+}

@@ -1,0 +1,132 @@
+.navbar-wrapper {
+   background-color: $white;
+   box-shadow: 0 0 45px 0 rgba($black, 0.075);
+   width: 100%;
+   position: absolute;
+   z-index: 1000;
+   transition: transform .2s ease-in-out;
+
+   &.js-navbar-fixed {
+      @include fixed(0, 0, null, 0);
+   }
+}
+
+
+.no-scroll,
+.modal-open {
+   & .navbar-wrapper {
+      padding-right: 17px;
+   }
+}
+
+.navbar {
+   height: #{$c-navbar-height}px;
+   padding: 0;
+
+   &__menu {
+      & .c-menu__link {
+         text-transform: uppercase;
+         height: #{$c-navbar-height}px;
+         line-height: rem($c-navbar-height);
+      
+         &.active .line {
+            background: $g-accent-color;
+            @include size(100%, 3px);
+            @include absolute(0, 0);
+            transition: .45s cubic-bezier(.39,.04,.45,1.55);
+         }
+      }
+      
+      @media screen and (max-width: $g-container-lg) {
+         display: none;
+      }
+   }
+
+   &__button > button {
+      height: auto;
+      text-transform: uppercase;
+   }
+}
+
+.navbar-toggler {
+   display: block;
+   @include size(24px, 18px);
+   padding: 0;
+   position: relative;
+   z-index: 10000;
+   cursor: pointer;
+
+   & > .line {
+      background-color: $g-title-color;
+      border-radius: 10px;
+      @include size(22px, 2px);
+      display: block;
+      @include absolute(0, 0);
+      transition: .2s ease-in-out;
+
+      &:nth-child(2n) {
+         top: 50%;
+         transform: translateY(-50%);
+      }
+      &:nth-child(3n) {
+         bottom: 0;
+         top: auto;
+      }
+   }
+   
+   &:focus {
+      outline: none;
+   } 
+
+   &.menu-open {
+      & > .line {
+         top: 50%;
+         transform: rotate(-45deg);
+
+         &:nth-child(2) {
+            display: none;
+         }
+         &:last-child {
+            transform: rotate(45deg);
+         }
+      }
+   }
+}
+
+.menu-wrapper {
+   background-color: $white;
+   @include fixed(0, 0, 0);
+   @include size(0, 0);
+   display: flex;
+   z-index: 1001;
+   overflow: hidden;
+   transition: width .2s ease-in-out;
+
+   &.hidden {
+      width: 0;
+   }
+
+   &__inner {
+      margin: auto;
+   }
+
+   & .c-menu {
+      &__item {
+         display: block;
+         padding: 15px 0;
+         text-align: center;
+      }
+
+      &__link {
+         text-transform: uppercase;
+         font-size: rem(26);
+         font-family: 'CirceExtraBold';
+      }
+   }
+}
+
+.no-scroll {
+   @include fixed(0, 0, null, 0);
+   height: 100%;
+   overflow: hidden;
+}

@@ -1,0 +1,16 @@
++b.SECTION.section.section-consultation
+   .container
+      +e.introduction_left
+         +e.H1.title Как получить #[br]консультацию онлайн
+      +e.content
+         .row
+            each object in content.steps
+               .col.col-12.col-lg-4
+                  +b.step
+                     +e.number= object['curNum']
+                     +e.content
+                        +e.H4.title!= object['title']
+                        +e.P.text= object['text']
+                        if object['curNum'] == 01
+                           +b.BUTTON.button_theme_accent._rounded._size-l(data-toggle="modal" data-target="#register")
+                              +e.SPAN.text Оставить заявку

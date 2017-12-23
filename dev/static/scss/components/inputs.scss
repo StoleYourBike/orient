@@ -1,0 +1,152 @@
+.telephone-group {
+   & > input {
+      margin: 0 5px;
+      text-align: center;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .input 
+// .textarea
+//    width 100%
+//    background transparent
+//    border none
+//    position relative
+//    font-family $g-text-font 
+
+// .label
+//    font rem(11) $g-title-font
+//    color rgba($black, .65)
+//    text-transform uppercase
+//    letter-spacing rem(.25)
+//    margin-bottom 5px
+
+//    & + .textarea
+//       margin-top 5px
+
+
+// .input
+//    margin 5px 0
+
+//    &_theme_default
+//       border 1px solid $g-border-color
+//       border-radius 2px
+//       color $g-text-color
+//       margin-bottom 25px
+
+//    &_theme_contact
+//       background-color $c-input-bg-color
+//       border-radius 2px
+//       color $g-text-color
+//       margin-bottom 25px
+
+//    &_size_xl
+//       padding 0 30px
+//       height 54px
+//       font-size rem(16)
+
+// .textarea
+//    min-height 100px
+//    padding 15px 30px
+//    font-size rem(15)
+
+//    &_theme_default
+//       @extends .input_theme_default
+
+//    &_theme_contact
+//       @extends .input_theme_contact
+
+// .checkbox
+//    vertical-align top
+//    margin 0 3px 0 0
+//    width 17px
+//    height 17px
+
+//    &:not(checked)
+//       position absolute
+//       opacity 0
+
+//       & + label
+//          position relative
+//          padding 0 0 0 30px
+
+//          &::before
+//             content ''
+//             position absolute
+//             top 0
+//             left 0
+//             size(18px)
+//             border-radius 2px
+//             background-color $c-checkbox-color
+
+//          &::after
+//             content '\f00c'
+//             position absolute
+//             top 2px
+//             left 3px
+//             color #1A1E2D
+//             display none
+//             font rem(13) 'FontAwesome'
+//             -webkit-font-smoothing antialiased
+//             -moz-osx-font-smoothing grayscale
+
+//    &:checked + label 
+//       &::before
+//          background-color $g-link-color
+//       &::after
+//          display block
+
+// .field
+//    position relative
+
+   
+
+// .terms
+//    font-size rem(14)
+//    color $g-text-color
+
+//    & a
+//       color $g-link-color
+
+//       &:hover
+//          text-decoration: underline

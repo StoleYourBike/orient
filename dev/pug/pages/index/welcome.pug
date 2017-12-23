@@ -1,0 +1,19 @@
+SECTION.section.section-first-screen
+   .container
+      .first-screen
+         include ../../modules/header
+
+         +b.welcome
+            .row
+               .col-sm-12.col-md-6.col-lg-6.offset-xl-1
+                  +e.img.img-backdroped
+                     +e.image(src="static/img/content/about2.jpg")
+                     .backdrop
+               .col-12.col-md-6.col-lg-5.col-xl-4.offset-lg-1
+                  +e.content
+                     +e.H1.title В вашей жизни #[br] наступил момент...
+                     +e.P.text Возможно, в Вашей жизни наступил тот момент, когда Вы почувствовали, 
+                        | что пора что-то менять. Это очень непростое решение. Вы искали варианты эффективной помощи
+                        | и поэтому попали на сайт Психологического центра ALTERA.
+         +b.scroll
+            +e.mouse

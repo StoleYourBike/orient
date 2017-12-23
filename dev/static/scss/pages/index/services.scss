@@ -1,0 +1,46 @@
+.section-services__btn {
+   text-align: center;
+}
+
+.service {
+   box-shadow: 1px 0 0 0 $g-border-color,
+               0 1px 0 0 $g-border-color,
+               1px 0 0 0 $g-border-color inset,
+               0 1px 0 0 $g-border-color inset;
+   height: 100%;
+   padding: 50px 45px 40px; 
+
+   &__number {
+      margin-bottom: 40px;
+
+      & > span {
+         position: relative;
+         font: rem(13) $g-title-font;
+         letter-spacing: rem(.5);
+
+         &::after {
+            content: '';
+            background-color: $g-accent-color;
+            @include size(100%, 2px);
+            @include absolute(100%, 0);
+            transform: translateY(10px);
+         }
+      }
+   }
+
+   &__title {
+      font: 700 rem(13) $g-title-font;
+      text-transform: uppercase;
+      line-height: rem(24);
+      margin-bottom: 15px;
+   }
+
+   &__text {
+      color: #787878;
+      line-height: rem(24);
+   }
+}
+
+.services-list {
+   margin: 0 -45px;
+}
