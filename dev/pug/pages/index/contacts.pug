@@ -1,0 +1,46 @@
++b.SECTION.section.section-contacts
+   .container
+      .section-contacts__xl-only
+         .row
+            .col-12.col-lg-6.col-xl-5.offset-xl-1
+               +e.introduction_left
+                  +e.H1.title Остались вопросы?
+                  +e.subtitle Мы всегда рады помочь! Обращайтесь по указанному  телефону или адресу, и мы обязательно вас проконсультируем!
+               +e.content
+                  +b.contacts
+                     +e.info
+                        +e.P.title Адрес:
+                        +e.link(href="#") Николаев, Украина, 05044, ул. Шевченковская, 39
+                     +e.info
+                        +e.P.title e-mail:
+                        +e.link(href="mailto: olgabern@i.ua") olgabern@i.ua
+                     +e.info
+                        +e.P.title телефон:
+                        +e.link(href="tel: 38 097 493-05-01") 38 097 493-05-01
+            .col-12.col-lg-6.col-xl-5
+               +b.contact-form
+                  form(method="post")
+                     +b.field
+                        +b.label Введите ваше имя
+                        +b.input_theme_contact._size_xl(type="text" placeholder="Например, Андрей")
+                     +b.field
+                        +b.label Введите ваш E-Mail
+                        +b.input_theme_contact._size_xl(type="email" placeholder="hello@mail.ru")
+                     +b.field
+                        +b.label Введите ваше сообщение
+                        +b.TEXTAREA.textarea_theme_contact(placeholder="Lorem ipsum dolor sit amet...")
+                     +b.terms
+                        +b.checkbox(type="checkbox" id="privacy" checked)
+                        label(for="privacy") Я согласен с условиями&nbsp;
+                           a(href="#") политики конфиденциальности 
+                     +b.field.__send-btn
+                        +b.BUTTON.button._theme_accent._rounded._fluid
+                           +e.SPAN.text Получить консультацию
+      .section-contacts__mobile-only
+         +e.introduction
+            +e.H1.title Остались вопросы?
+         +e.content
+            p Позвоните по номеру
+            a.contact-tel(href="tel:38 097 493-05-01") 38 097 493-05-01
+            p или &nbsp;
+               a.contact-link.underline(href="" data-toggle="modal" data-target="#consult") задайте вопрос

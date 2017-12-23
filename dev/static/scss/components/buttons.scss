@@ -1,0 +1,128 @@
+.button {
+   background: transparent;
+   border: none;
+   box-sizing: border-box;
+   display: inline-block;
+   position: relative;
+   overflow: hidden;
+   margin: 0;
+   padding: 0;
+   user-select: none;
+   white-space: nowrap;
+   touch-action: manipulation;
+   cursor: pointer;
+
+   &:focus {
+      outline: none;
+   }
+
+   &__text {
+      display: inline-block;
+      position: relative;
+      resize: none;
+      pointer-events: none;
+   }
+
+   &_theme_action {
+      box-shadow: 0 0 0 2px $g-accent-color;
+      font-size: rem(11);
+      font-family: 'CirceBold';
+      letter-spacing: rem(.5);
+      transition: background .15s ease-in-out;
+
+      &:hover {
+         background-color: $g-accent-color;
+         color: $g-text-color;
+      }
+   }
+
+   &_theme_link {
+      @extends .button_theme_white;
+      background-color: $g-link-color;
+      transition: background .15s ease-in-out;
+
+      &:hover {
+         background-color: $g-accent-color;
+      }
+   }
+
+   &_theme_accent {
+      background-color: $g-accent-color;
+      background: linear-gradient(180deg, $g-gradient-first-color, $g-gradient-second-color);
+      box-shadow: 0 5px 30px 0 rgba($c-btn-shadow-color, .3);
+      border-bottom: 2px solid $c-btn-shadow-color;
+      text-transform: uppercase;
+      font: rem(12) $g-link-font;
+      color: $g-title-color;
+      letter-spacing: rem(.5);
+
+      &:hover {
+         background: linear-gradient(0deg, $g-gradient-first-color, $g-gradient-second-color);
+      }
+   }
+
+   &_theme_standard {
+      color: $g-link-color;
+      transition: background .15s ease-in-out;
+
+      &:hover {
+         background-color: $g-section-color;
+      }
+   }
+
+   &_size-m {
+      line-height: rem(36);
+
+      & .button__text {
+         padding: 0 30px;
+         transform: translateY(1px);
+      }
+   }
+
+   &_size-l {
+      line-height: rem(42);
+
+      & .button__text {
+         font-size: rem($g-font-size-sm);
+         letter-spacing: rem(.75);
+         padding: 0 30px;
+      }
+
+      & .button__icon {
+         @include size(14px);
+      }
+   }
+
+   &_size-xl {
+      line-height: rem(50);
+
+      & .button__text {
+         padding: 0 50px;
+         transform: translateY(2px);
+      }
+   }
+
+   &_fluid {
+      width: 100%;
+   }
+
+   &_rounded {
+      border-radius: 1000px;
+   }
+
+   &_icon {
+      padding: 0 15px;
+
+      & .button__text {
+         padding: 0;
+      }
+
+      & .button__icon {
+         margin-right: 10px;
+      }
+   }
+
+   &__icon {
+      display: inline-block;
+   }
+}

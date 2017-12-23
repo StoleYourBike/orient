@@ -1,0 +1,75 @@
+.modal.fade.modal-consultation(id="consult" tabindex="-1" role="dialog" aria-labelledby="consult")
+   .modal-dialog(role="document")
+      .modal-content
+         .modal-header
+            h3.modal-title Онлайн консультация
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+               span.close__line
+               span.close__line
+         .modal-body
+            +b.field.__field
+               label Ваше имя
+               +b.input_theme_default._size_xl(type="text" placeholder="Например, Андрей")
+            +b.field.__field
+               +b.label Ваш E-Mail
+               +b.input_theme_default._size_xl(type="email" placeholder="hello@mail.ru")
+            +b.field
+               +b.label Сообщение
+               +b.TEXTAREA.textarea_theme_default(placeholder="Lorem ipsum dolor sit amet...")
+            +b.terms
+               +b.checkbox(type="checkbox" id="consultPrivacy" checked)
+               label(for="consultPrivacy") Я согласен с условиями&nbsp;
+                  a(href="#") политики конфиденциальности 
+         .modal-footer
+            +b.field.modal-btn
+               +b.BUTTON.button_theme_accent._rounded._fluid
+                  +e.SPAN.text Получить консультацию
+.modal.fade.modal-register(id="register" tabindex="-1" role="dialog" aria-labelledby="register")
+   .modal-dialog(role="document")
+      .modal-content
+         .modal-header
+            h3.modal-title Запись на приём
+            p.modal-subtitle Напишите своё имя и номер телефона и я свяжусь с вами
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+               span.close__line
+               span.close__line
+         .modal-body
+            .form-group
+               label.col-form-label(for="inputRegName") Ваше имя
+               +b.form-control.form-control-lg(type="text" id="inputRegName" placeholder="Например, Андрей")
+            .form-group
+               label.col-form-label(for="inputRegPhone") Ваш телефон
+               .form-row.telephone-group
+                  +b.form-control.form-control-lg.col(type="text" placeholder="+38" value="+38" maxlength="3")
+                  +b.form-control.form-control-lg.col(type="text" id="inputRegPhone" placeholder="068" maxlength="3")
+                  +b.form-control.form-control-lg.col-6(type="text" placeholder="123-45-67" maxlength="7")
+            +b.terms
+               label.custom-control.custom-checkbox(for="regPrivacy")
+                  input.custom-control-input(type="checkbox" id="regPrivacy" checked)
+                  span.custom-control-indicator
+                  span.custom-control-description Я согласен с условиями&nbsp;
+                     a(href="#") политики конфиденциальности 
+         .modal-footer
+            .form-group.modal-btn
+               +b.BUTTON.button_theme_accent._rounded._fluid
+                  +e.SPAN.text Записаться на приём
+.modal.fade.modal-call(id="callMe" tabindex="-1" role="dialog" aria-labelledby="callMe")
+   .modal-dialog
+      .modal-content
+         .modal-header
+            h3.modal-title Обратный звонок
+            p.modal-subtitle Оставьте свой номер телефона и я свяжусь с вами
+            button.close(type="button" data-dismiss="modal" aria-label="Close")
+               span.close__line
+               span.close__line
+         .modal-body
+            .form-group
+               label.col-form-label(for="inputRegPhone") Ваш телефон
+               .form-row.telephone-group
+                  +b.form-control.form-control-lg.col(type="text" placeholder="+38" value="+38" maxlength="3")
+                  +b.form-control.form-control-lg.col(type="text" id="inputRegPhone" placeholder="068" maxlength="3")
+                  +b.form-control.form-control-lg.col-6(type="text" placeholder="123-45-67" maxlength="7")
+         .modal-footer
+            .form-group.modal-btn
+               +b.BUTTON.button_theme_accent._rounded._fluid
+                  +e.SPAN.text Заказать обратный звонок

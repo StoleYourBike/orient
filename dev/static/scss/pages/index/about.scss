@@ -1,0 +1,299 @@
+.section-about {
+   margin: 80px 0;
+   padding: 100px 0;
+
+   &__text {
+      font-size: rem(15);
+      line-height: rem(28);
+
+      & p {
+         margin: 30px 0;
+      }
+   }
+
+   &__descr {
+      font: rem(30) $g-title-font;
+      line-height: rem(42);
+      margin-bottom: 50px;
+      position: relative;
+
+      &::before {
+         content: '';
+         background: url('../img/content/quote.png') no-repeat;
+         @include size(58px);
+         @include absolute(10px, -50px);
+         transform: translateX(-100%);
+      }
+   }
+
+   &__button {
+      margin-top: 40px;
+      text-transform: uppercase;
+
+      & .button__text {
+         font-size: rem(11);
+      }
+   }
+}
+
+
+.last-news {
+   margin: 0 -45px;
+   padding: 35px 0;
+   position: relative;
+
+   &::before {
+      content: '';
+      background: linear-gradient(60deg, $g-accent-color, $g-link-color);
+      @include size(100%);
+      @include absolute(0, 0);
+      z-index: -1;
+   }
+
+   &::after {
+      content: '';
+      background-color: $white;
+      @include size(calc(100% - 10px));
+      @include absolute(5px, 5px);
+      z-index: -1;
+   }
+
+   &__title {
+      font: rem(32) $g-title-font;
+      @include absolute(0, 50%);
+      padding: 0 30px;
+      transform: translate(-50%, -22px);
+
+      &::before {
+         content: '';
+         background-color: $white;
+         @include size(100%);
+         @include absolute(0, 0);
+         z-index: -1;
+      }
+   }
+
+   &__list {
+      padding: 0;
+      list-style: none;
+      margin-bottom: 50px;
+   }
+
+   &__block {
+      outline: none;
+   }
+
+   &__dots {
+      height: 20px;
+      @include absolute(null, 50%, 0);
+      transform: translate(-50%, 2px);
+
+      &-list {
+         list-style: none;
+         margin: 0;
+         padding: 0 20px;
+         position: relative;
+
+         &::before {
+            content: '';
+            background-color: $white;
+            @include size(100%);
+            @include absolute(0, 0);
+            z-index: -1;
+         }
+
+         & > li {
+            display: inline-block;
+            margin: 0 3px;
+
+            &.slick-active > button::before {
+               background-color: $g-title-color;
+            }
+         }
+
+         & button {
+            background-color: transparent;
+            border: none;
+            display: block;
+            @include size(20px);
+            font-size: 0;
+            line-height: 0;
+            position: relative;
+            outline: none;
+            cursor: pointer;
+
+            &::before {
+               content: '';
+               background-color: $g-accent-color;
+               border-radius: 50%;
+               @include size(10px);
+               @include absolute-center();
+            }
+         }
+      }
+   }
+
+   &__link {
+      width: 100%;
+      position: absolute;
+      bottom: -60px;
+      left: 0;
+      text-align: center;
+
+      & > a {
+         font: rem(12) $g-title-font;
+         color: $g-title-color;
+         text-transform: uppercase;
+         position: relative;
+
+         &:hover::after {
+            display: none;
+         }
+
+         &::after {
+            content: '';
+            background-color: rgba($g-title-color, .25);
+            @include size(100%, 1px);
+            position: absolute;
+            bottom: 3px;
+            left: 0;
+         }
+      }
+   }
+}
+
+.news {
+   margin: 50px 45px 0;
+
+   &__img {
+      margin: 25px 0;
+
+      & > img {
+         width: 100%;
+      }
+   }
+
+   &__title {
+      font: rem(12) $g-title-font;
+      line-height: rem(21);
+      letter-spacing: rem(.25);
+      color: #5A6773;
+      text-transform: uppercase;
+   }
+
+   &__date {
+      font-family: $g-title-font;
+      letter-spacing: rem(.75);
+      color: $g-link-color;
+   }
+
+   &__socials,
+   &__date {
+      display: inline-block;
+      font-size: rem(12);
+      margin-bottom: 14px;
+   }
+
+   &__socials {
+      float: right;
+
+      & a {
+         color: $g-link-color;
+         margin: 0 10px;
+
+         &:last-child {
+            margin-right: 0;
+         }
+      }
+   }
+
+   &__text {
+      margin-top: 10px;
+      line-height: rem(24);
+   }
+}
+
+@media (max-width: $g-container-lg) {
+   .section-about {
+      padding: 0;
+
+      & .container {
+         max-width: $g-container-lg;
+      }
+   }
+
+   .about {
+      display: none;
+   }
+
+   .last-news {
+      padding: 60px 0;
+      
+      &::before {
+         display: none;
+      }
+
+      &::after {
+         background-color: #111;
+      }
+
+      &__title {
+         position: relative;
+         text-align: center;
+         margin: 20px 0;
+         color: $white;
+         padding: 0;
+
+         &::before {
+            display: none;
+         }
+      }
+
+      &__dots {
+         display: none;
+      }
+
+      &__list {
+         max-width: $g-container-md;
+         margin: 0 auto;
+         padding: 0 15px;
+      }
+
+      &__link {
+         position: relative;
+         bottom: 0;
+
+         & > a {
+            background-color: $white;
+            display: inline-block;
+            padding: 12px 35px;
+
+            &::after {
+               display: none;
+            }
+         }
+      }
+   }
+
+   .news {
+      margin: 0 30px 50px;
+
+      &__date,
+      &__text,
+      &__socials > a {
+         color: $white;
+      }
+
+      &__title {
+         color: $g-link-color;
+         font-size: rem(14);
+         letter-spacing: rem(.5);
+      }
+   }
+}
+
+@media (max-width: $g-container-md) {
+   .section-about {
+      margin: 0;
+   }
+}

@@ -1,0 +1,46 @@
+// colors
+$white: #FFF;
+$black: #000;
+
+$g-title-color: #31343a;
+$g-text-color: #353130;
+$g-link-color: #fdad00;
+
+$g-accent-color: #ffc501;
+
+$g-section-color: #f4f4f4;
+$g-section-dark-color: #111111;
+
+$g-border-color: #e4e4e4;
+
+$g-gradient-first-color: #ffc501;
+$g-gradient-second-color: #fdad00;
+
+$c-btn-bg-color: $g-accent-color;
+$c-btn-text-color: $g-text-color;
+$c-btn-shadow-color: #df7811;
+
+$c-input-bg-color: #ECECEC;
+
+$c-checkbox-color: #D8D8D8;
+// sizes
+
+$c-navbar-height: 70;
+$c-header-height: 175;
+
+$c-menu-fontSize: 12;
+
+$g-font-size-sm: 11;
+$g-font-size-m: 12;
+$g-font-size-l: 13;
+
+$g-container-xl: 1200px;
+$g-container-lg: 992px;
+$g-container-md: 768px;
+$g-container-sm: 576px;
+
+// fonts
+$g-text-font: 'ProximaNova', sans-serif;
+$g-title-font: 'CirceExtraBold', sans-serif;
+$g-nav-font: 'CirceBold', sans-serif;
+$g-link-font: 'CirceBold', sans-serif;

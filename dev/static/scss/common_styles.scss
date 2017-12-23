@@ -1,0 +1,36 @@
+.modal {
+   &-header {
+      & .close {
+         @include absolute(0px, 100%, null);
+         @include size(32px);
+         font-size: rem(32);
+         line-height: rem(18);
+         text-shadow: none;
+         color: $white;
+         outline: none;
+         margin: 0;
+         padding: 0;
+         z-index: 100;
+         cursor: pointer;
+         transform: translateX(10px);
+
+         &__line {
+            background-color: $white;
+         }
+      }
+   }
+
+   &-title {
+      font-family: 'CirceExtraBold';
+   }
+
+   &-subtitle {
+      font-size: 1rem;
+      margin-top: 1rem;
+      margin-bottom: 0;
+   }
+}
+
+.form-control-lg {
+   height: 52px;
+}

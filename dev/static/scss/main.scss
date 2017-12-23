@@ -1,0 +1,52 @@
+@import 'fonts.scss';
+@import 'vars.scss';
+@import 'libs.scss';
+@import 'utils/mixins.scss';
+@import 'utils/functions.scss';
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+textarea {
+	resize: none
+}
+
+input,
+select,
+button,
+textarea {
+	outline: none;
+}
+
+.icon {
+   @include size(100%);
+}
+
+// Общие стили
+@import 'common_styles.scss';
+
+
+// МОДУЛИ
+@import 'modules/navbar/navbar.scss';
+// Стили шапки
+@import 'modules/header/header.scss';
+
+// Стили футера
+@import 'modules/footer/footer.scss';
+
+// Стили меню
+@import 'modules/navigation/main-nav.scss';
+
+//Компоненты
+@import "components/components.scss";
+
+
+// СТРАНИЦЫ
+// Стили главной страницы
+@import 'pages/index.scss';

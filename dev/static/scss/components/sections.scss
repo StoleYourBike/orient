@@ -1,0 +1,60 @@
+.section {
+   padding: 40px 0;
+   position: relative;
+   display: block;
+   overflow: hidden;
+
+   &_accent {
+      background-color: $g-section-color;
+
+      & .section__border-pattern {
+         color: $g-section-color;
+      }
+   }
+
+   &__title {
+      font: rem(42) $g-title-font;
+      line-height: rem(46);
+      color: $g-title-color;
+
+      &_size_sm {
+         font-size: rem(32);
+      }
+   }
+
+   &__subtitle {
+      margin: 25px auto 0; 
+      width: 75%;
+      line-height: rem(24);
+      color: #787878;
+   }
+
+   &__introduction {
+      text-align: center;
+      margin-top: 30px;
+
+      &_left {
+         text-align: left;
+
+         & .section__subtitle {
+            margin-left: 0;
+            margin-right: 0;
+         }
+      }
+   }
+
+   &__content {
+      position: relative;
+      margin: 70px 0;
+   }
+
+   &__footer {
+      margin-bottom: 30px;
+   }
+}
+
+@media (max-width: $g-container-md) {
+   .section__content {
+      margin: 40px 0;
+   }
+}

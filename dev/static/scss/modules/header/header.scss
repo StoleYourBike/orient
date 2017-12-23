@@ -1,0 +1,129 @@
+.header {
+   height: #{$c-header-height}px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+
+   &__info {
+      font-size: rem(14);
+      line-height: rem(24);
+      position: relative;
+
+      & a:not(.phone__call-me) {
+         color: $g-title-color;
+      }
+   }
+}
+
+.phone {
+   &.dropdown {
+      display: none;
+   }
+
+   &__icon,
+   &__text {
+      display: inline-block;
+      vertical-align: top;
+   }
+
+   &__icon > .icon {
+      fill: $g-link-color;
+      @include size(14px);
+      margin-right: 10px;
+      transform: translateY(-5px);
+   }
+
+   &__number {
+      display: block;
+      font-size: rem(18);
+      font-family: 'CirceBold';
+      line-height: rem(21);
+   }
+
+   &__call-me {
+      font-size: rem($g-font-size-sm);
+      font-family: $g-link-font;
+      color: $g-link-color;
+      position: relative;
+      text-transform: uppercase;
+
+      &::after {
+         content: '';
+         background-color: rgba($g-link-color, .5);
+         @include size(100%, 1px);
+         @include absolute(null, 0, 2px);
+      }
+
+      &:hover::after {
+         display: none;
+      }
+   }
+}
+
+@media (max-width: $g-container-lg) {
+   .header {
+      & .location,
+      & .email {   
+         display: none;
+      }
+   }
+}
+
+@media (max-width: $g-container-md) {
+   .header {
+      & .phone {
+         display: none;
+
+         &.dropdown {
+            position: absolute;
+            top: 110px;
+            right: 0;
+            transform: translate(0, 0);
+            display: block;
+         }
+
+         &__btn {
+            border-radius: 3px 3px 0 0;
+            @include size(44px);
+            fill: red;
+            text-align: center;
+            font: rem(37) 'FontAwesome';
+            line-height: rem(44);
+            cursor: pointer;
+            transform: translate(0, -100%);
+
+            &::after {
+               display: none;
+            }
+         }
+
+         &__dropdown {
+            background-color: $g-accent-color;
+            border-radius: 3px 0 3px 3px;
+            border: none;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            margin-top: -2px;
+         }
+
+         &__icon {
+            display: none;
+         }
+
+         &__call-me {
+            color: rgba($g-title-color, .85);
+
+            & > span::after {
+               background-color: rgba($black, .25);
+            }
+         }
+
+         &.show {
+            & .phone__btn {
+               background-color: $g-accent-color;
+            }
+         }
+      }
+   }
+}

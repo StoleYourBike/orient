@@ -1,0 +1,26 @@
++b.HEADER.header
+   +b.logo
+      +e.link(href="#")
+         +e.img(src="static/img/general/logo/logo4.png" alt="Аналитический психолог Ольга Бернацкая")
+   +b.location.__info
+      +e.address(href="/") г. Николаев, #[strong ул. Фалеевская 49/8]
+      +e.time с #[strong 10] до #[strong 18.00]
+   +b.email.__info
+      +e.title Есть вопрос? Пишите!
+      +e.address(href="mailto: olgabern@i.ua") #[strong olgabern@i.ua]
+   +b.phone.__info
+      +e.icon
+         +icon('phone-call')
+      +e.text
+         +e.number(href="tel: 38 097 493-05-01") 38 097 493-05-01
+         +e.call-me(href="#callMe" data-toggle="modal" data-target="#callMe") Перезвоните мне
+   +b.phone.__info.dropdown
+      +b.BUTTON.button.dropdown-toggle.__btn(type="button" id="dropdownPhoneButton" data-toggle="dropdown" aria-haspopup="true")
+         span(class="fa fa-mobile" aria-hidden="true")
+      .dropdown-menu.dropdown-menu-right.phone__dropdown(aria-labelledby="dropdownPhoneButton")
+         +e.icon
+            +icon('phone-call')
+         +e.text
+            +e.number.dropdown-item(href="tel: 38 097 493-05-01") 38 097 493-05-01
+            +e.call-me.dropdown-item(href="#callMe" data-toggle="modal" data-target="#callMe") 
+               span Перезвоните мне
