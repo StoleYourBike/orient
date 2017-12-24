@@ -28,19 +28,20 @@
 }
 
 .social-icon {
-   background-color: $g-section-color;
+   background-color: $primary;
    border-radius: 50%;
    display: inline-block;
-   @include size(42px);
+   @include size(38px);
    text-align: center;
-   font-size: rem(18);
-   line-height: 44px;
+   font-size: rem(15);
+   line-height: 40px;
    margin-left: 10px;
+   color: $white;
    cursor: pointer;
    transition: .2s ease-in-out;
 
    &:hover {
-      background-color: $g-accent-color;
+      background-color: lighten($primary, 20%);
    }
 }
 

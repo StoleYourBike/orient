@@ -8,32 +8,37 @@
                   +e.subtitle Мы всегда рады помочь! Обращайтесь по указанному  телефону или адресу, и мы обязательно вас проконсультируем!
                +e.content
                   +b.contacts
-                     +e.info
-                        +e.P.title Адрес:
-                        +e.link(href="#") Николаев, Украина, 05044, ул. Шевченковская, 39
-                     +e.info
-                        +e.P.title e-mail:
-                        +e.link(href="mailto: olgabern@i.ua") olgabern@i.ua
-                     +e.info
-                        +e.P.title телефон:
-                        +e.link(href="tel: 38 097 493-05-01") 38 097 493-05-01
-            .col-12.col-lg-6.col-xl-5
+                     address
+                        strong Адрес
+                        br
+                        a.address-link(href="#") Николаев, Украина, 05044, ул. Шевченковская, 39
+                     address
+                        strong E-mail:
+                        br
+                        a.address-link(href="mailto: olgabern@i.ua") olgabern@i.ua
+                     address
+                        strong Телефон:
+                        br
+                        a.address-link(href="tel: 38 097 493-05-01") 38 097 493-05-01
+            .col-12.col-lg-5.col-xl-4.offset-md-1
                +b.contact-form
                   form(method="post")
-                     +b.field
-                        +b.label Введите ваше имя
-                        +b.input_theme_contact._size_xl(type="text" placeholder="Например, Андрей")
-                     +b.field
-                        +b.label Введите ваш E-Mail
-                        +b.input_theme_contact._size_xl(type="email" placeholder="hello@mail.ru")
-                     +b.field
-                        +b.label Введите ваше сообщение
-                        +b.TEXTAREA.textarea_theme_contact(placeholder="Lorem ipsum dolor sit amet...")
+                     .form-group
+                        label.col-form-label Введите ваше имя
+                        input.form-control.form-control-lg(type="text" placeholder="Например, Андрей")
+                     .form-group
+                        label.col-form-label Введите ваш E-Mail
+                        input.form-control.form-control-lg(type="email" placeholder="hello@mail.ru")
+                     .form-group
+                        label.col-form-label Введите ваше сообщение
+                        textarea.form-control(placeholder="Lorem ipsum dolor sit amet..." rows="3")
                      +b.terms
-                        +b.checkbox(type="checkbox" id="privacy" checked)
-                        label(for="privacy") Я согласен с условиями&nbsp;
-                           a(href="#") политики конфиденциальности 
-                     +b.field.__send-btn
+                        label.custom-control.custom-checkbox(for="privacy")
+                           input.custom-control-input(type="checkbox" id="privacy" checked)
+                           span.custom-control-indicator
+                           span.custom-control-description Я согласен с условиями&nbsp;
+                              a(href="#") политики конфиденциальности 
+                     .form-group.contact-form__send-btn
                         +b.BUTTON.button._theme_accent._rounded._fluid
                            +e.SPAN.text Получить консультацию
       .section-contacts__mobile-only
