@@ -1,6 +1,6 @@
-+b.SECTION.section.section-services
++b.SECTION.section.services(id="services")
    .container
-      +e.introduction
+      +b.introduction
          +e.H1.title Мои услуги
       +e.content
          .row.no-gutters.services-list
@@ -12,6 +12,10 @@
                      +e.H4.title!= object['title']
                      +e.text= object['text']
       +e.footer
-         .section-services__btn
+         .services__btn
             +b.BUTTON.button._theme_accent._rounded._size-xl(type="button" data-toggle="modal" data-target="#register") 
                +e.text Записаться на приём
+   +b.ornament-animation.services__ornament
+      +e.inner
+         +e.svg
+            +icon('hexagon')

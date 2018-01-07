@@ -2,33 +2,39 @@
   "menu": {
       "1": {
          "title": "Главная",
-         "link": "main.html",
-         "isActive": "active"
+         "link": "index.html",
+         "isActive": "active",
+         "attr": "main"
       },
       "2": {
-         "title": "О центре",
-         "link": "about.html",
-         "isActive": ""
+         "title": "Услуги",
+         "link": "index.html#services",
+         "isActive": "",
+         "attr": "services"
       },
       "3": {
-         "title": "Услуги",
-         "link": "services.html",
-         "isActive": ""
+         "title": "О центре",
+         "link": "index.html#about",
+         "isActive": "",
+         "attr": "about"
       },
       "4": {
-         "title": "Блог",
-         "link": "blog.html",
-         "isActive": ""
+         "title": "Сертификаты",
+         "link": "index.html#certificates",
+         "isActive": "",
+         "attr": "certificates"
       },
       "5": {
-         "title": "Публикации",
-         "link": "publications.html",
-         "isActive": ""
+         "title": "Контакты",
+         "link": "index.html#contacts",
+         "isActive": "",
+         "attr": "contacts"
       },
       "6": {
-         "title": "Контакты",
-         "link": "contacts.html",
-         "isActive": ""
+         "title": "Блог",
+         "link": "blog.html",
+         "isActive": "",
+         "attr": "blog"
       }
   }
 }

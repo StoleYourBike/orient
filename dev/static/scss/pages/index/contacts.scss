@@ -39,17 +39,11 @@
 }
 
 .contact-form {
-   padding: 35px 35px;
+   background-color: $g-section-color;
+   border-radius: 3px;
+   padding: 40px;
    position: relative;
    transform: translateY(-13px);
-
-   &::before {
-      content: '';
-      background-color: #F9F9F9;
-      border-radius: 3px;
-      @include absolute(0, -10px, 0, -10px);
-      z-index: -1;
-   }
 
    &__field {
       margin: 20px 0;
@@ -59,7 +53,7 @@
       margin-top: 20px;
 
       & .button {
-         line-height: rem(60);
+         line-height: rem(56);
          font-size: rem(13);
          outline: none;
       }

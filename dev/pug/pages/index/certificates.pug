@@ -1,15 +1,18 @@
-+b.SECTION.section.section-certificates
++b.SECTION.section.certificates(id="certificates")
    .container
-      +e.introduction
+      +b.introduction
          +e.H1.title Cертификаты
       +e.content
          .row
             each object in content.certificates
                .col-md-4.col-lg-3
                   +b.certificate
-                     +e.img-container(class='_' + object['orientation'])
-                        +e.img(src= "static/img/content/certificates/" + object['img'])
+                     +e.img-container(href="static/img/content/certificates/" + object['img'] class='_' + object['orientation'] + ' js-gallery-thumbnail')
+                        +e.img(src= "static/img/content/certificates/" + object['img'] alt= object['title'])
                      +e.content
                         +e.H4.title= object['title']
                         +e.text= object['descr']
-            
+   +b.ornament-animation.certificates__ornament
+      +e.inner
+         +e.svg
+            +icon('hexagon')

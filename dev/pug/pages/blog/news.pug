@@ -1,0 +1,37 @@
+.row
+   each object in content.blog
+      each news in object
+         if ( news['id'] < 6 )
+            if ( news['id'] == 1 )
+               +b.ARTICLE.post.col-md-12
+                  +e.img
+                     img(src= news['img'] alt= news['title'])
+                  +e.info
+                     +e.H4.title
+                        +e.link(href="fullnews.html")= news['title']
+                     +e.date= news['date']
+                     +e.text= news['text']
+                     +e.FOOTER.footer
+                        .social-share
+                           a(href="")
+                              span( class="fa fa-facebook" aria-hidden="true")
+                           a(href="")
+                              span(class="fa fa-vk" aria-hidden="true")
+                           a(href="")
+                              span(class="fa fa-twitter" aria-hidden="true")
+                           a(href="")
+                              span(class="fa fa-google-plus" aria-hidden="true")
+                        +b.button_theme_action._rounded._size-m.readmore(href="fullnews.html") 
+                           +e.text Читать далее
+            else
+               +b.ARTICLE.post.col-md-6
+                  +e.img
+                     img(src= news['img'] alt= news['title'])
+                  +e.info
+                     +e.H4.title
+                        +e.link(href="fullnews.html")= news['title']
+                     +e.date= news['date']
+                     +e.text= news['text']
+                     +e.FOOTER.footer
+                        +b.button_theme_action._rounded._size-m.readmore(href="fullnews.html") 
+                           +e.text Читать далее

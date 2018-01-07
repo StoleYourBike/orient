@@ -28,6 +28,11 @@ textarea {
    @include size(100%);
 }
 
+::selection {
+   background-color: $g-button-color;
+   color: #454545;
+}
+
 // Общие стили
 @import 'common_styles.scss';
 
@@ -50,3 +55,5 @@ textarea {
 // СТРАНИЦЫ
 // Стили главной страницы
 @import 'pages/index.scss';
+
+@import 'pages/blog';

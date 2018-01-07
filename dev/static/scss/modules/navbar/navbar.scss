@@ -2,20 +2,12 @@
    background-color: $white;
    box-shadow: 0 0 45px 0 rgba($black, 0.075);
    width: 100%;
-   position: absolute;
+   @include fixed(0, 0, null, 0);
    z-index: 1000;
-   transition: transform .2s ease-in-out;
+   transition: margin-top .3s ease-in-out;
 
-   &.js-navbar-fixed {
-      @include fixed(0, 0, null, 0);
-   }
-}
-
-
-.no-scroll,
-.modal-open {
-   & .navbar-wrapper {
-      padding-right: 17px;
+   &.not-top {
+      margin-top: -#{$c-navbar-height}px;
    }
 }
 
@@ -96,7 +88,7 @@
 .menu-wrapper {
    background-color: $white;
    @include fixed(0, 0, 0);
-   @include size(0, 0);
+   @include size(100%);
    display: flex;
    z-index: 1001;
    overflow: hidden;
@@ -104,6 +96,10 @@
 
    &.hidden {
       width: 0;
+
+      & .c-menu__item {
+         animation: none;
+      }
    }
 
    &__inner {
@@ -115,6 +111,9 @@
          display: block;
          padding: 15px 0;
          text-align: center;
+         transform: translateY(-20px);
+         opacity: 0;
+         animation: nav .5s ease-in-out forwards;
       }
 
       &__link {
@@ -125,8 +124,19 @@
    }
 }
 
-.no-scroll {
-   @include fixed(0, 0, null, 0);
-   height: 100%;
-   overflow: hidden;
+@keyframes nav {
+   0% {
+      transform: translateY(-20px);
+      opacity: 0;
+   }
+   100% {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
+
+@media screen and (min-width: $g-container-lg) {
+   .modal-open .navbar-wrapper {
+      padding-right: 17px;
+   }
 }

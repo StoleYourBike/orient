@@ -24,30 +24,32 @@
    }
 
    &_theme_action {
-      box-shadow: 0 0 0 2px $g-accent-color;
-      font-size: rem(11);
-      font-family: 'CirceBold';
+      box-shadow: 0 0 0 1px $g-button-color;
+      font: rem(10) 'ProximaNova';
+      color: $g-link-color;
       letter-spacing: rem(.5);
+      text-transform: uppercase;
       transition: background .15s ease-in-out;
 
       &:hover {
-         background-color: $g-accent-color;
-         color: $g-text-color;
+         background-color: $g-button-color;
+         box-shadow: 0 0 0 1px $g-button-color;
+         color: $white;
       }
    }
 
    &_theme_link {
       @extends .button_theme_white;
-      background-color: $g-link-color;
+      background-color: $g-button-color;
       transition: background .15s ease-in-out;
 
       &:hover {
-         background-color: $g-accent-color;
+         background-color: $g-button-color;
       }
    }
 
    &_theme_accent {
-      background-color: $g-accent-color;
+      background-color: $primary;
       background: linear-gradient(180deg, $g-gradient-first-color, $g-gradient-second-color);
       box-shadow: 0 5px 30px 0 rgba($c-btn-shadow-color, .3);
       border-bottom: 2px solid $c-btn-shadow-color;
@@ -58,6 +60,10 @@
 
       &:hover {
          background: linear-gradient(0deg, $g-gradient-first-color, $g-gradient-second-color);
+      }
+
+      & .button__text {
+         transform: translateY(2px);
       }
    }
 
@@ -108,21 +114,5 @@
 
    &_rounded {
       border-radius: 1000px;
-   }
-
-   &_icon {
-      padding: 0 15px;
-
-      & .button__text {
-         padding: 0;
-      }
-
-      & .button__icon {
-         margin-right: 10px;
-      }
-   }
-
-   &__icon {
-      display: inline-block;
    }
 }

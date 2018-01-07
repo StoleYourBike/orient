@@ -1,5 +1,19 @@
-.section-services__btn {
-   text-align: center;
+.services {
+   overflow-x: hidden;
+
+   &__btn {
+      text-align: center;
+   }
+
+   &__ornament {
+      top: 0;
+      right: 25%;
+
+      & .ornament-animation__svg {
+         @include size(730px, 795px);
+         fill: rgba($black, .045);
+      }
+   }
 }
 
 .service {

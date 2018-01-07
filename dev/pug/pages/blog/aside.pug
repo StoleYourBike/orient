@@ -1,0 +1,30 @@
+aside.sidebar
+   +b.widget.widget-about-me
+      +e.H5.title Обо мне
+      +b.about-widget.__content
+         +e.img
+            img(src="static/img/content/about.jpg" alt="")
+         +e.H6.title Аналитический психолог
+         +e.P.text Aenean vehicula lobortis eros. Nunc viverra, eros consectetur dignissim viverra, mauris diam lobortis nunc, ut viverra ante lorem non quam.
+   +b.widget.widget-subscribe
+      +e.H5.title Подписка
+      +b.subscribe-widget.__content
+         +e.P.desc Подпишитесь на рассылку, чтобы получать все последние новости и обновления.
+         +e.form(method="post")
+            +e.INPUT.email.__input(type="email" placeholder="Введите Ваш Email")
+            +e.BUTTON.button.__input.button Подписаться
+   +b.widget.widget-popular
+      +e.H5.title Популярные
+      +b.popular-widget.__content
+         +b.UL.popular-news
+            each object in content.blog
+               each news in object
+                  if ( news['id'] < 6 )
+                     +b.popular-post
+                        +e.img
+                           a(href="#")
+                              img(src= news['img'] alt= news['title'])
+                        +e.content
+                           +e.H6.title
+                              a(href="#")= news['title']
+                           +e.date(href="#")= news['date']

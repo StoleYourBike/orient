@@ -4,6 +4,7 @@
    justify-content: space-between;
    align-items: center;
    position: relative;
+   margin-top: #{$c-navbar-height}px;
 
    &__info {
       font-size: rem(14);
@@ -14,6 +15,10 @@
          color: $g-title-color;
       }
    }
+}
+
+.index-page .header {
+   margin-top: 0;
 }
 
 .phone {

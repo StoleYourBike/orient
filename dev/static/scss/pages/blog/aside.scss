@@ -1,0 +1,150 @@
+.sidebar {
+   padding: 30px 25px;
+   border: 5px solid #f9f9f9;
+   margin-bottom: 50px;
+}
+
+.widget {
+   &:not(:last-child) {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 45px;
+      margin-bottom: 45px;
+   }
+
+   &__title {
+      font: rem(18) 'CirceExtraBold';
+      margin-bottom: 40px;
+      padding-bottom: 5px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+
+      &::before {
+         content: '';
+         background-color: $primary;
+         @include size(30px, 1px);
+         @include absolute(100%, 50%)
+         transform: translate(-50%, 0);
+      }
+   }
+}
+
+.about-widget {
+   &__img {
+      margin-bottom: 25px;
+      
+      & img {
+         display: inline-block;
+         vertical-align: middle;
+         max-width: 100%;
+         height: auto;
+      }
+   }
+
+   &__title {
+      font: rem(14) 'CirceBold';
+      text-align: center;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+   }
+
+   &__text {
+      text-align: center;
+      margin-bottom: 0;
+      line-height: rem(24);
+      color: #454545;
+   }
+}
+
+.subscribe-widget {
+   &__form {
+      max-width: 360px;
+      margin: 0 auto;
+   }
+
+   &__desc {
+      text-align: center;
+      margin-bottom: 2rem;
+   }
+
+   &__input {
+      border-radius: 100px;
+      text-align: center;
+      width: 100%;
+      padding: 7px 20px;
+      line-height: rem(24);
+   }
+
+   &__email {
+      background-color: #eee;
+      border: 1px solid #eee;
+      color: #999;
+      margin-bottom: 10px;
+   }
+
+   &__button {
+      background-color: $g-button-color;
+      border: 1px solid $g-button-color;
+      display: inline-block;
+      font-size: rem(12);
+      text-transform: uppercase;
+      color: #ffffff;
+      transition: background .2s ease-in-out;
+
+      &:hover {
+         background-color: transparent;
+         color: $primary;
+      }
+   }
+}
+
+.popular-news {
+   padding: 0;
+}
+
+.popular-post {
+   display: flex;
+   align-items: center;
+
+   &:not(:last-child) {
+      margin-bottom: 20px;
+   }
+
+   &__img {
+      border-radius: 50%;
+      display: block;
+      min-width: 100px;
+      @include size(100px);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+
+      & img {
+         min-height: 100px;
+         min-width: 100px;
+         max-width: 150px;
+         width: auto;
+      }
+   }
+
+   &__title {
+      font: rem(14) 'ProximaNovaBold';
+
+      & > a {
+         color: $g-title-color;
+         transition: color 0.3s ease;
+
+         &:hover {
+            color: $g-link-color;
+         }
+      }
+   }
+
+   &__date {
+      color: inherit;
+      font-size: 12px;
+      color: #999999;
+   }
+}

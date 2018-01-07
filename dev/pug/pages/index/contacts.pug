@@ -1,9 +1,9 @@
-+b.SECTION.section.section-contacts
++b.SECTION.section.section-contacts(id="contacts")
    .container
       .section-contacts__xl-only
          .row
             .col-12.col-lg-6.col-xl-5.offset-xl-1
-               +e.introduction_left
+               +b.introduction_left
                   +e.H1.title Остались вопросы?
                   +e.subtitle Мы всегда рады помочь! Обращайтесь по указанному  телефону или адресу, и мы обязательно вас проконсультируем!
                +e.content
@@ -25,13 +25,13 @@
                   form(method="post")
                      .form-group
                         label.col-form-label Введите ваше имя
-                        input.form-control.form-control-lg(type="text" placeholder="Например, Андрей")
+                        input.form-control.form-control-lg(type="text" placeholder="Например, Андрей" required)
                      .form-group
                         label.col-form-label Введите ваш E-Mail
-                        input.form-control.form-control-lg(type="email" placeholder="hello@mail.ru")
+                        input.form-control.form-control-lg(type="email" placeholder="hello@mail.ru" required)
                      .form-group
                         label.col-form-label Введите ваше сообщение
-                        textarea.form-control(placeholder="Lorem ipsum dolor sit amet..." rows="3")
+                        textarea.form-control(placeholder="Lorem ipsum dolor sit amet..." rows="3" required)
                      +b.terms
                         label.custom-control.custom-checkbox(for="privacy")
                            input.custom-control-input(type="checkbox" id="privacy" checked)
@@ -42,7 +42,7 @@
                         +b.BUTTON.button._theme_accent._rounded._fluid
                            +e.SPAN.text Получить консультацию
       .section-contacts__mobile-only
-         +e.introduction
+         +b.introduction
             +e.H1.title Остались вопросы?
          +e.content
             p Позвоните по номеру

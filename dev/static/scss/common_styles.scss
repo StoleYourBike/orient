@@ -32,5 +32,38 @@
 }
 
 .form-control-lg {
-   height: 52px;
+   height: 48px;
+}
+
+select.form-control-lg {
+   font-size: inherit;
+}
+
+.ornament-animation {
+   position: absolute;
+   z-index: 0;
+
+   &__inner {
+      position: relative;
+      @include size(100%);
+   }
+
+   &__svg {
+      animation: rotating 35s linear infinite;
+      transform-origin: center center 0px;
+      @include absolute(0, 0);
+   }
+
+   & svg {
+      @include size(100%);
+   }
+}
+
+@keyframes rotating {
+   0% {
+      transform: rotate(0);
+   }
+   100% {
+      transform: rotate(180deg);
+   }
 }

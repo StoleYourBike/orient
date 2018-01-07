@@ -16,6 +16,7 @@
       line-height: rem(42);
       margin-bottom: 50px;
       position: relative;
+      margin-top: 40px;
 
       &::before {
          content: '';
@@ -23,15 +24,6 @@
          @include size(58px);
          @include absolute(10px, -50px);
          transform: translateX(-100%);
-      }
-   }
-
-   &__button {
-      margin-top: 40px;
-      text-transform: uppercase;
-
-      & .button__text {
-         font-size: rem(11);
       }
    }
 }
@@ -76,7 +68,7 @@
    &__list {
       padding: 0;
       list-style: none;
-      margin-bottom: 50px;
+      padding-bottom: 20px;
    }
 
    &__block {
@@ -135,9 +127,7 @@
 
    &__link {
       width: 100%;
-      position: absolute;
-      bottom: -60px;
-      left: 0;
+      @include absolute(null, 0, -60px)
       text-align: center;
 
       & > a {
@@ -154,9 +144,7 @@
             content: '';
             background-color: rgba($g-title-color, .25);
             @include size(100%, 1px);
-            position: absolute;
-            bottom: 3px;
-            left: 0;
+            @include absolute(null, 0, -3px)
          }
       }
    }

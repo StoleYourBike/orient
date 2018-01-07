@@ -2,18 +2,32 @@
    padding: 40px 0;
    position: relative;
    display: block;
-   overflow: hidden;
+   
+   &__content {
+      position: relative;
+      margin: 70px 0;
+   }
 
-   &_accent {
-      background-color: $g-section-color;
+   &__footer {
+      margin-bottom: 30px;
+   }
+}
 
-      & .section__border-pattern {
-         color: $g-section-color;
+.introduction {
+   text-align: center;
+   margin-top: 30px;
+
+   &_left {
+      text-align: left;
+
+      & .introduction__subtitle {
+         margin-left: 0;
+         margin-right: 0;
       }
    }
 
    &__title {
-      font: rem(42) $g-title-font;
+      font-family: $g-title-font;
       line-height: rem(46);
       color: $g-title-color;
 
@@ -27,29 +41,6 @@
       width: 75%;
       line-height: rem(24);
       color: #787878;
-   }
-
-   &__introduction {
-      text-align: center;
-      margin-top: 30px;
-
-      &_left {
-         text-align: left;
-
-         & .section__subtitle {
-            margin-left: 0;
-            margin-right: 0;
-         }
-      }
-   }
-
-   &__content {
-      position: relative;
-      margin: 70px 0;
-   }
-
-   &__footer {
-      margin-bottom: 30px;
    }
 }
 
