@@ -1,6 +1,34 @@
-.section-about {
+.about {
    margin: 80px 0;
    padding: 100px 0;
+
+   &-container {
+      padding: 50px 50px 50px 0;
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &::before {
+         content: '';
+         background-color: $g-section-color;
+         @include size(100%);
+         @include absolute(0, 0);
+         transform: translateX(-16.66667%);
+         z-index: -1;
+      }
+   }
+
+   &__img {
+      box-shadow: 0 5px 35px 0 rgba($black, .2);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      height: 250px;
+
+      & img {
+         height: 100%;
+      }
+   }
 
    &__text {
       font-size: rem(15);
@@ -11,7 +39,7 @@
       }
    }
 
-   &__descr {
+   &__desc {
       font: rem(30) $g-title-font;
       line-height: rem(42);
       margin-bottom: 50px;
@@ -30,26 +58,6 @@
 
 
 .last-news {
-   margin: 0 -45px;
-   padding: 35px 0;
-   position: relative;
-
-   &::before {
-      content: '';
-      background: linear-gradient(60deg, $g-accent-color, $g-link-color);
-      @include size(100%);
-      @include absolute(0, 0);
-      z-index: -1;
-   }
-
-   &::after {
-      content: '';
-      background-color: $white;
-      @include size(calc(100% - 10px));
-      @include absolute(5px, 5px);
-      z-index: -1;
-   }
-
    &__title {
       font: rem(32) $g-title-font;
       @include absolute(0, 50%);
@@ -63,16 +71,6 @@
          @include absolute(0, 0);
          z-index: -1;
       }
-   }
-
-   &__list {
-      padding: 0;
-      list-style: none;
-      padding-bottom: 20px;
-   }
-
-   &__block {
-      outline: none;
    }
 
    &__dots {
@@ -151,8 +149,9 @@
 }
 
 .news {
-   margin: 50px 45px 0;
-
+   &:not(:last-child) {
+      margin-bottom: 40px;
+   }
    &__img {
       margin: 25px 0;
 

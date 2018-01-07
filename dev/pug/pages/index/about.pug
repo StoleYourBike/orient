@@ -1,33 +1,28 @@
-+b.SECTION.section.section-about(id="about")
++b.SECTION.section.about(id="about")
    .container
       .row
-         .col-12.col-lg-7.col-xl-8
-            .about
-               .section-about__descr Часто спрашивают: «Что значит ALTERA?» #[br]Это название отображает нашу сущность #[br]и то, чем мы занимаемся.
-               .section-about__text 
-                  p У многих наступает момент, когда ты четко понимаешь, что не хочешь жить как прежде — хочется жить совершенно по-другому. Для этого нужны изменения. Но не всегда осознаешь, с чего начинать. Именно в этом мы помогаем людям. Наше название происходит от латинского «alter» — иной, другой. Другой взгляд, иное мнение специалистов ALTERA дают вам возможность начать новую, лучшую жизнь.
-                  p Психологический центр ALTERA был основан в 2008 году. За это время к нам обратились более 2 000 человек, которые искали решение своим проблемам — личным и семейным. При этом 7 из 10 наших посетителей записываются на повторные консультации. Они не только видят положительные изменения, которые происходят в их жизни, но хотят закрепить результат и развиваться дальше.
-               +b.BUTTON.button_theme_action._rounded._size-m
-                  +e.text Подробнее
-         .col-12.col-lg-4.col-xl-3.offset-lg-1
-            +b.last-news
-               +e.H2.title Новости
-               +e.list.js-last-news
-                  each block in content.blog
-                     +e.block
-                        each item in block
-                           +b.news
-                              +e.info
-                                 +e.date= item['date']
-                                 +e.socials
-                                    a.vk(href="#")
-                                       i.fa.fa-vk(aria-hidden="true")
-                                    a.fb(href="#")
-                                       i.fa.fa-facebook(aria-hidden="true")
-                                    a.ok(href="#")
-                                       i.fa.fa-odnoklassniki(aria-hidden="true")
-                              +e.title(href="#")= item['title']
-                              +e.text= item['desc']
-               +e.dots
-               +e.link
-                  a(href="#") Все новости
+         .col-md-9
+            .row
+               .about-container
+                  .col-md-7
+                     .about__description Часто спрашивают: «Что значит ALTERA?» #[br]Это название отображает нашу сущность #[br]и то, чем мы занимаемся.
+                     .about__text 
+                        p У многих наступает момент, когда ты четко понимаешь, что не хочешь жить как прежде — хочется жить совершенно по-другому. Для этого нужны изменения. Но не всегда осознаешь, с чего начинать. Именно в этом мы помогаем людям. Наше название происходит от латинского «alter» — иной, другой. Другой взгляд, иное мнение специалистов ALTERA дают вам возможность начать новую, лучшую жизнь.
+                  .col-md-5
+                     .about__img(data-tilt)
+                        img(src="http://5psy.ru/images/stories/Articles/kab-psy.jpg" alt="")
+         .col-md-3
+            .last-news
+               each item in content.blog.block1
+                  +b.news
+                     +e.info
+                        +e.date= item['date']
+                        +e.socials
+                           a.vk(href="#")
+                              i.fa.fa-vk(aria-hidden="true")
+                           a.fb(href="#")
+                              i.fa.fa-facebook(aria-hidden="true")
+                           a.ok(href="#")
+                              i.fa.fa-odnoklassniki(aria-hidden="true")
+                     +e.title(href="#")= item['title']
+                     +e.text= item['desc']
