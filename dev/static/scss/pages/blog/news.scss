@@ -15,7 +15,15 @@
          align-items: center;
          padding: 25px 17px;
          width: 100%;
+
+         @media screen and (max-width: $g-container-sm) {
+            flex-direction: column;
+         }
      }
+
+      & .post__text {
+         text-align: left;
+      }
    }
 
    &__img {
@@ -55,10 +63,11 @@
       line-height: rem(26);
       margin-bottom: 45px;
       color: #454545;
-   }
 
-   &.post_full .post__text {
-      text-align: left;
+      @media screen and (max-width: $g-container-sm) {
+         font-size: rem(14);
+         line-height: rem(24);
+      }
    }
 
    &__tags {
@@ -73,6 +82,16 @@
          &:hover {
             text-decoration: underline;
          }
+      }
+
+      @media screen and (max-width: $g-container-sm) {
+         margin-bottom: 1rem;
+      }
+   }
+
+   &:not(.post_full) .social-share {
+      @media screen and (max-width: $g-container-sm) {
+         display: none;
       }
    }
 }
@@ -91,6 +110,10 @@
 }
 
 .post-related {
+   @media screen and (max-width: $g-container-sm) {
+      margin-bottom: 2rem;
+   }
+
    &__img {
       display: block;
       margin-bottom: 15px;

@@ -1,6 +1,6 @@
 +b.SECTION.section.about(id="about")
    .container
-      .row
+      .row.d-flex.align-items-center
          .col-md-9
             .row
                .about-container
@@ -12,17 +12,24 @@
                      .about__img(data-tilt)
                         img(src="http://5psy.ru/images/stories/Articles/kab-psy.jpg" alt="")
          .col-md-3
-            .last-news
+            +b.last-news
+               +e.header.clearfix
+                  +e.H2.title Новости
+                  +e.controls
+                     +b.button.__control_down(type="button")
+                        +icon('down-arrow')
+                     +b.button.__control_up(type="button")
+                        +icon('up-arrow')
                each item in content.blog.block1
                   +b.news
                      +e.info
                         +e.date= item['date']
-                        +e.socials
-                           a.vk(href="#")
-                              i.fa.fa-vk(aria-hidden="true")
-                           a.fb(href="#")
-                              i.fa.fa-facebook(aria-hidden="true")
-                           a.ok(href="#")
-                              i.fa.fa-odnoklassniki(aria-hidden="true")
+                        //- +e.socials
+                        //-    a.vk(href="#")
+                        //-       i.fa.fa-vk(aria-hidden="true")
+                        //-    a.fb(href="#")
+                        //-       i.fa.fa-facebook(aria-hidden="true")
+                        //-    a.ok(href="#")
+                        //-       i.fa.fa-odnoklassniki(aria-hidden="true")
                      +e.title(href="#")= item['title']
                      +e.text= item['desc']

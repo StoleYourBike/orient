@@ -3,7 +3,7 @@
    padding: 100px 0;
 
    &-container {
-      padding: 50px 50px 50px 0;
+      padding: 80px 50px 60px 0;
       position: relative;
       display: flex;
       align-items: center;
@@ -33,24 +33,21 @@
    &__text {
       font-size: rem(15);
       line-height: rem(28);
-
-      & p {
-         margin: 30px 0;
-      }
+      color: #797979;
    }
 
-   &__desc {
-      font: rem(30) $g-title-font;
-      line-height: rem(42);
+   &__description {
+      font: rem(21) $g-title-font;
+      line-height: rem(32);
       margin-bottom: 50px;
       position: relative;
-      margin-top: 40px;
 
       &::before {
          content: '';
          background: url('../img/content/quote.png') no-repeat;
-         @include size(58px);
-         @include absolute(10px, -50px);
+         background-size: cover;
+         @include size(40px);
+         @include absolute(10px, -35px);
          transform: translateX(-100%);
       }
    }
@@ -58,145 +55,50 @@
 
 
 .last-news {
+   &__header {
+      margin-bottom: 3rem;
+   }
+
    &__title {
       font: rem(32) $g-title-font;
-      @include absolute(0, 50%);
-      padding: 0 30px;
-      transform: translate(-50%, -22px);
-
-      &::before {
-         content: '';
-         background-color: $white;
-         @include size(100%);
-         @include absolute(0, 0);
-         z-index: -1;
-      }
+      float: left;
    }
 
-   &__dots {
-      height: 20px;
-      @include absolute(null, 50%, 0);
-      transform: translate(-50%, 2px);
-
-      &-list {
-         list-style: none;
-         margin: 0;
-         padding: 0 20px;
-         position: relative;
-
-         &::before {
-            content: '';
-            background-color: $white;
-            @include size(100%);
-            @include absolute(0, 0);
-            z-index: -1;
-         }
-
-         & > li {
-            display: inline-block;
-            margin: 0 3px;
-
-            &.slick-active > button::before {
-               background-color: $g-title-color;
-            }
-         }
-
-         & button {
-            background-color: transparent;
-            border: none;
-            display: block;
-            @include size(20px);
-            font-size: 0;
-            line-height: 0;
-            position: relative;
-            outline: none;
-            cursor: pointer;
-
-            &::before {
-               content: '';
-               background-color: $g-accent-color;
-               border-radius: 50%;
-               @include size(10px);
-               @include absolute-center();
-            }
-         }
-      }
+   &__controls {
+      float: right;
+      margin-top: 5px;
    }
 
-   &__link {
-      width: 100%;
-      @include absolute(null, 0, -60px)
-      text-align: center;
+   &__control {
+      padding: 5px 3px;
 
-      & > a {
-         font: rem(12) $g-title-font;
-         color: $g-title-color;
-         text-transform: uppercase;
-         position: relative;
-
-         &:hover::after {
-            display: none;
-         }
-
-         &::after {
-            content: '';
-            background-color: rgba($g-title-color, .25);
-            @include size(100%, 1px);
-            @include absolute(null, 0, -3px)
-         }
+      & svg {
+         @include size(14px, 20px);
       }
    }
 }
 
 .news {
    &:not(:last-child) {
-      margin-bottom: 40px;
-   }
-   &__img {
-      margin: 25px 0;
-
-      & > img {
-         width: 100%;
-      }
+      margin-bottom: 3rem;
    }
 
    &__title {
-      font: rem(12) $g-title-font;
+      font: rem(16) $g-title-font;
       line-height: rem(21);
-      letter-spacing: rem(.25);
-      color: #5A6773;
-      text-transform: uppercase;
+      color: inherit;
    }
 
    &__date {
-      font-family: $g-title-font;
-      letter-spacing: rem(.75);
-      color: $g-link-color;
-   }
-
-   &__socials,
-   &__date {
-      display: inline-block;
-      font-size: rem(12);
-      margin-bottom: 14px;
-   }
-
-   &__socials {
-      float: right;
-
-      & a {
-         color: $g-link-color;
-         margin: 0 10px;
-
-         &:last-child {
-            margin-right: 0;
-         }
-      }
+      font: rem(12) 'ProximaNova';
+      color: $gray-600;
+      margin-bottom: .5rem;
    }
 
    &__text {
-      margin-top: 10px;
+      margin-top: 1rem;
       line-height: rem(24);
+      color: #797979;
    }
 }
 
