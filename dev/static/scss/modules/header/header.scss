@@ -17,6 +17,29 @@
    }
 }
 
+.logo {
+   display: block;
+
+   &:hover .roll-hover-btn__label {
+      transform: translateY(-105%);
+   }
+
+   &__title {
+      font: rem(18) 'CirceExtraBold';
+      text-transform: uppercase;
+      line-height: rem(21);
+      color: $g-title-color;
+   }
+
+   &__subtitle {
+      font: rem(13) 'ProximaNova';
+      text-transform: uppercase;
+      color: #fdad00;
+      letter-spacing: rem(.5);
+      height: 14px;
+   }
+}
+
 .index-page .header {
    margin-top: 0;
 }

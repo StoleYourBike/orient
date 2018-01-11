@@ -7,15 +7,12 @@
             each object in content.services
                .col-12.col-md-6.col-lg-4.col-xl-3
                   +b.service
-                     +e.number
-                        span= object['num']
-                     +e.H4.title!= object['title']
-                     +e.text= object['text']
+                     +e.inner(data-anim-stagger="vertical")
+                        +e.number
+                           span= object['num']
+                        +e.H4.title!= object['title']
+                        +e.text= object['text']
       +e.footer
          .services__btn
             +b.BUTTON.button._theme_accent._rounded._size-xl(type="button" data-toggle="modal" data-target="#register") 
                +e.text Записаться на приём
-   +b.ornament-animation.services__ornament
-      +e.inner
-         +e.svg
-            +icon('hexagon')

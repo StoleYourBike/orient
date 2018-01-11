@@ -1,0 +1,13 @@
+[data-anim-stagger=vertical],
+[data-anim-stagger=horizontal] {
+   position: relative;
+   opacity: 0;
+}
+
+[data-anim-stagger=vertical] {
+   transform: translateY(90px);
+}
+
+[data-anim-stagger=horizontal] {
+   transform: translateX(90px);
+}

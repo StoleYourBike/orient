@@ -5,6 +5,7 @@
    @include fixed(0, 0, null, 0);
    z-index: 1000;
    transition: margin-top .3s ease-in-out;
+   transform: translateY(-#{$c-navbar-height}px);
 
    &.not-top {
       margin-top: -#{$c-navbar-height}px;
@@ -26,6 +27,8 @@
             @include size(100%, 3px);
             @include absolute(0, 0);
             transition: .45s cubic-bezier(.39,.04,.45,1.55);
+            transform: translateY(-100%);
+            transform-origin: 0 0;
          }
       }
       
@@ -34,9 +37,14 @@
       }
    }
 
-   &__button > button {
-      height: auto;
-      text-transform: uppercase;
+   &__button {
+      transform: translateX(-40px);
+      opacity: 0;
+
+      & button {
+         height: auto;
+         text-transform: uppercase;
+      }
    }
 }
 

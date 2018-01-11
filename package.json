@@ -31,12 +31,17 @@
     "gulp-uglifyjs": "^0.6.2"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "bootstrap": "^4.0.0-beta.2",
     "jquery-mask-plugin": "^1.14.13",
     "magnific-popup": "^1.1.0",
     "normalize.css": "^7.0.0",
+    "queryloader2": "^3.2.3",
+    "scrollmagic": "^2.0.5",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.8",
-    "tilt.js": "^1.2.1"
+    "tilt.js": "^1.2.1",
+    "velocity-animate": "^1.5.0",
+    "wow.js": "^1.2.2"
   }
 }

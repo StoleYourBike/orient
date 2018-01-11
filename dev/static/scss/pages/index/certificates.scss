@@ -4,10 +4,13 @@
    &__ornament {
       top: -100px;
       left: -10%;
+      opacity: 0.05;
 
       & .ornament-animation__svg {
          @include size(500px, 555px);
-         fill: rgba($black, .045);
+         fill: transparent;
+         stroke: #232020;
+         stroke-width: .5;
       }
    }
 }

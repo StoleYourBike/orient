@@ -1,18 +1,8 @@
 .services {
-   overflow-x: hidden;
+   overflow: hidden;
 
    &__btn {
       text-align: center;
-   }
-
-   &__ornament {
-      top: 0;
-      right: 25%;
-
-      & .ornament-animation__svg {
-         @include size(730px, 795px);
-         fill: rgba($black, .045);
-      }
    }
 }
 
@@ -22,7 +12,7 @@
                1px 0 0 0 $g-border-color inset,
                0 1px 0 0 $g-border-color inset;
    height: 100%;
-   padding: 50px 45px 40px; 
+   padding: 50px 45px 40px;
 
    &__number {
       margin-bottom: 40px;

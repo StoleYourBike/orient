@@ -20,36 +20,6 @@
    }
 }
 
-.img-backdroped {
-   position: relative;
-
-   & > img {
-      width: 100%;
-   }
-
-   & > .backdrop {
-      background-color: lighten($g-accent-color, 15%);
-      @include size(30px, 70%);
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translate(-15px, -50%);
-      z-index: -1;
-   }
-}
-
-.underline {
-   position: relative;
-
-   &::after {
-      content: '';
-      @include size(100%, 1px);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-   }
-}
-
 @media (max-width: $g-container-md) {
    .img-backdroped > .backdrop {
       display: none;

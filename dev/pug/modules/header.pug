@@ -1,14 +1,17 @@
 +b.HEADER.header
-   +b.logo
-      +e.link(href="#")
-         +e.img(src="static/img/general/logo/logo4.png" alt="Аналитический психолог Ольга Бернацкая")
-   +b.location.__info
+   +e.logotype(href="#" data-anim-stagger="vertical")
+      +b.logo
+         +e.H3.title Аналитический психолог
+         +b.DIV.roll-hover-btn.__subtitle
+            +e.DIV.label Ольга Бернацкая
+            +e.DIV.label Ольга Бернацкая
+   +b.location.__info(data-anim-stagger="vertical")
       +e.address(href="/") г. Николаев, #[strong ул. Фалеевская 49/8]
       +e.time с #[strong 10] до #[strong 18.00]
-   +b.email.__info
+   +b.email.__info(data-anim-stagger="vertical")
       +e.title Есть вопрос? Пишите!
       +e.address(href="mailto: olgabern@i.ua") #[strong olgabern@i.ua]
-   +b.phone.__info
+   +b.phone.__info(data-anim-stagger="vertical")
       +e.icon
          +icon('phone-call')
       +e.text
