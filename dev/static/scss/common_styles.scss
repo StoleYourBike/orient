@@ -79,18 +79,18 @@ select.form-control-lg {
 
    &__move {
       transform: translateX(-100%);
+      height: 100%;
    }
 
    &__overlay {
-      @include absolute(100%, 0, 0, 0);
-      height: 100%;
+      @include absolute(0, 0);
+      @include size(100%);
       background: #1e2433;
-      transform: translateY(-100%);
       z-index: 10;
    }
 
    & img {
-      @include size(100%);
+      width: 100%;
    }
 }
 
@@ -114,6 +114,32 @@ select.form-control-lg {
    
    &:hover .roll-hover-btn__label {
       transform: translateY(-105%);
+   }
+}
+
+
+.title {
+   position: relative;
+   overflow: hidden;
+   display: inline-block;
+
+   &__move {
+      transform: translateX(-100%);
+      height: 100%;
+   }
+
+   &__overlay {
+      @include absolute(0, null, 0, 0);
+      @include size(100%);
+      background: $g-title-color;
+      z-index: 10;
+   }
+
+   &__text {
+      margin-bottom: 0;
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
    }
 }
 

@@ -6,18 +6,20 @@
                .about-container
                   .about__backdrop
                   .col-lg-6.col-xl-7.offset-lg-1.offset-xl-0
-                     .about__description Часто спрашивают: «Что значит ALTERA?» Это название отображает нашу сущность и то, чем мы занимаемся.
-                     .about__text 
-                        p У многих наступает момент, когда ты четко понимаешь, что не хочешь жить как прежде — хочется жить совершенно по-другому. Для этого нужны изменения. Но не всегда осознаешь, с чего начинать. Именно в этом мы помогаем людям. Наше название происходит от латинского «alter» — иной, другой. Другой взгляд, иное мнение специалистов ALTERA дают вам возможность начать новую, лучшую жизнь.
+                     .about__description(data-anim-stagger="vertical") Часто спрашивают: «Что значит ALTERA?» Это название отображает нашу сущность и то, чем мы занимаемся.
+                     .about__text(data-anim-stagger="vertical") У многих наступает момент, когда ты четко понимаешь, что не хочешь жить как прежде — хочется жить совершенно по-другому. Для этого нужны изменения. Но не всегда осознаешь, с чего начинать. Именно в этом мы помогаем людям. Наше название происходит от латинского «alter» — иной, другой. Другой взгляд, иное мнение специалистов ALTERA дают вам возможность начать новую, лучшую жизнь.
                   .col-lg-6.col-xl-5
-                  +b.image
-                     +e.move
-                        +e.overlay
-                        img(src="http://5psy.ru/images/stories/Articles/kab-psy.jpg" alt="")
+                     +b.image.about__image
+                        +e.move(data-img-move="to-right")
+                           +e.overlay
+                           img(src="http://5psy.ru/images/stories/Articles/kab-psy.jpg" alt="")
          .col-xl-3
             +b.last-news
                +e.header.clearfix
-                  +e.H2.title Новости
+                  +b.title.__title
+                     +e.move(data-title-move="to-right")
+                        +e.H2.text Новости
+                           +e.SPAN.overlay
                   +e.controls
                      +b.button.__control_prev(type="button")
                         span(class="fa fa-long-arrow-down" aria-hidden="true")
@@ -26,7 +28,7 @@
                +e.list.row.js-last-news
                   each block in content.blog
                      each item in block
-                        +b.news.col-md-4.col-xl-12
+                        +b.news.col-lg-4.col-xl-12(data-anim-stagger="vertical")
                            +e.date= item['date']
                            +e.title(href="#")= item['title']
                            +e.text= item['desc']

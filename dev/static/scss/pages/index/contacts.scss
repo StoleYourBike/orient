@@ -43,7 +43,8 @@
    border-radius: 3px;
    padding: 40px;
    position: relative;
-   transform: translateY(-13px);
+   transform-origin: 0 100%;
+   transform: translateY(-13px) scaleY(0);
 
    &__field {
       margin: 20px 0;

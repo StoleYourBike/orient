@@ -12,7 +12,10 @@ var app = {
                 this.navbar(),
                 this.firstScreen(),
                 this.services(),
-                this.about();
+                this.about(),
+                this.consult(),
+                this.certificates(),
+                this.contacts();
             },
             header() {
                 let tween = new TimelineMax()
@@ -35,7 +38,6 @@ var app = {
             navbar() {
                 let navListItems = $('.js-menu').find('.js-menu-link'),
                     tween = new TimelineMax()
-                            .to('.navbar-wrapper', 0.1, { transform: `translateY(0)` }, .25)
                             .add([
                                 TweenMax.staggerTo('.js-menu-link', 0.25, { transform: `translateX(0)`, opacity: 1 }, 0.1),
                                 TweenMax.to('.navbar__button', 0.25, { transform: `translate(0, 0)`, opacity: 1, delay: 1 })
@@ -43,7 +45,6 @@ var app = {
                             .to('.js-nav-line', 0.15, { transform:  `translateY(0)` }),
                     scene = new ScrollMagic.Scene({
                                 triggerElement: '.navbar',
-                                triggerHook: 0.9,
                                 reverse: false
                             })
                             .setTween(tween)
@@ -52,12 +53,11 @@ var app = {
             firstScreen() {
                 let data = $('.welcome').find('[data-anim-stagger]'),
                     tween = new TimelineMax()
-                            .to('.welcome .image__move', .75, {transform: `translateX(0)`})
-                            .to('.welcome .image__overlay', .75, {transform: `translateY(0)`})
-                            .to('.welcome .backdrop', .25, {scaleX: 1})
+                            .to('.welcome .image__move', .5, {transform: `translateX(0)`})
+                            .to('.welcome .image__overlay', .5, {transform: `translateY(0)`})
                             .add([
-                                TweenMax.staggerTo(data, .5, { transform: `translate(0, 0)`, opacity: 1}, .2),
-                                TweenMax.to('.scroll', .25, { transform: `translate(0, 0)`, opacity: 1})
+                                TweenMax.to('.welcome .backdrop', .25, {scaleX: 1}),
+                                TweenMax.staggerTo(data, .5, { transform: `translate(0, 0)`, opacity: 1}, .2)
                             ]),
                     scene = new ScrollMagic.Scene({
                                 triggerElement: '#first-screen',
@@ -66,38 +66,194 @@ var app = {
                             .setTween(tween)
                             .addTo(app.scrollController),
                     scene2 = new ScrollMagic.Scene({
-                                triggerElement: '#first-screen',
-                                offset: 700
+                                triggerElement: '.scroll',
+                                offset: 200
                             })
-                            .setTween('.scroll', .35, { bottom: 150, opacity: 0})
+                            .setTween('.scroll', .35, { y: -150, opacity: 0})
                             .addTo(app.scrollController);
             },
             services() {
-                let array = [],
-                    delay = 0;
+                let container = $('#services'),
+                    anim = {
+                        title: {
+                            move: container.find('[data-title-move]'),
+                            overlay: container.find('.title__overlay'),
+                            timing: .5
+                        }
+                    },
+                    tween = new TimelineMax()
+                            .add([
+                                TweenMax.staggerTo([
+                                        anim.title.move, 
+                                        anim.title.overlay
+                                    ], anim.title.timing, { 
+                                        x: 0,
+                                        y: 0
+                                    }, anim.title.timing)
+                            ]),
+                    scene = new ScrollMagic.Scene({
+                                triggerElement: container,
+                                reverse: false
+                            })
+                            .setTween(tween)
+                            .addTo(app.scrollController);
 
-                $.each($('.service__inner'), function() {
-                    array.push(TweenMax.to($(this), .35, { transform: `translateY(0)`, opacity: 1, delay: delay }))
-                    delay += 0.25;
-
-                    let tween = new TimelineMax()
-                                .add(array),
-                        scene = new ScrollMagic.Scene({
+                $.each($('.service'), function(i, item) {
+                    let tween2 = new TimelineMax()
+                                .staggerTo($(item).children(), .5, { 
+                                    x: 0,
+                                    y: 0,
+                                    opacity: 1
+                                }, .25),
+                        scene2 = new ScrollMagic.Scene({
                                     triggerElement: $(this),
+                                    triggerHook: 'onEnter',
+                                    offset: 200,
                                     reverse: false
                                 })
-                                .setTween(tween)
+                                .setTween(tween2)
                                 .addTo(app.scrollController);
-                    console.log(this);
                 });
             },
             about() {
-                let tween = new TimelineMax()
-                            .to('.about__backdrop', .75, { scaleX: 1 })
-                            .to('#about .image__move', .75, {transform: `translateX(0)`})
-                            .to('#about .image__overlay', .75, {transform: `translateY(0)`}),
+                let container = $('#about'),
+                    anim = {
+                        backdrop: '.about__backdrop',
+                        text: container.find('[data-anim-stagger]'),
+                        title: {
+                            move: container.find('[data-title-move]'),
+                            overlay: container.find('.title__overlay'),
+                            timing: .5
+                        },
+                        picture: {
+                            move: container.find('[data-img-move]'),
+                            overlay: container.find('.image__overlay'),
+                            timing: .5
+                        }
+                    },
+                    tween = new TimelineMax()
+                            .to(anim.backdrop, .75, { scale: 1 })
+                            .add([
+                                TweenMax.staggerTo([
+                                        anim.picture.move, 
+                                        anim.picture.overlay
+                                    ], anim.picture.timing, {
+                                        x: 0,
+                                        y: 0
+                                    }, anim.picture.timing),
+                                TweenMax.staggerTo([
+                                        anim.title.move, 
+                                        anim.title.overlay
+                                    ], anim.title.timing, { 
+                                        x: 0,
+                                        y: 0
+                                    }, anim.title.timing),
+                                TweenMax.staggerTo(anim.text, .5, { 
+                                        x: 0, 
+                                        y: 0, 
+                                        opacity: 1
+                                    }, .2)
+                            ]),
                     scene = new ScrollMagic.Scene({
                                 triggerElement: '.about-container',
+                                reverse: false
+                            })
+                            .setTween(tween)
+                            .addTo(app.scrollController);
+            },
+            consult() {
+                let container = $('#consultation'),
+                    anim = {
+                        text: container.find('[data-anim-stagger]'),
+                        title: {
+                            move: container.find('[data-title-move]'),
+                            overlay: container.find('.title__overlay'),
+                            timing: .5
+                        }
+                    },
+                    tween = new TimelineMax()
+                            .add([
+                                TweenMax.staggerTo([
+                                        anim.title.move, 
+                                        anim.title.overlay
+                                    ], anim.title.timing, { 
+                                        x: 0,
+                                        y: 0
+                                    }, anim.title.timing),
+                                TweenMax.staggerTo(anim.text, .5, { 
+                                        x: 0, 
+                                        y: 0,
+                                        opacity: 1
+                                    }, .35)
+                            ]),
+                    scene = new ScrollMagic.Scene({
+                                triggerElement: container,
+                                reverse: false
+                            })
+                            .setTween(tween)
+                            .addTo(app.scrollController);
+            },
+            certificates() {
+                let container = $('#certificates'),
+                    anim = {
+                        text: container.find('[data-anim-stagger]'),
+                        title: {
+                            move: container.find('[data-title-move]'),
+                            overlay: container.find('.title__overlay'),
+                            timing: .5
+                        }
+                    },
+                    tween = new TimelineMax()
+                            .add([
+                                TweenMax.staggerTo([
+                                        anim.title.move, 
+                                        anim.title.overlay
+                                    ], anim.title.timing, { 
+                                        x: 0,
+                                        y: 0
+                                    }, anim.title.timing),
+                                TweenMax.staggerTo(anim.text, .5, { 
+                                        x: 0, 
+                                        y: 0,
+                                        opacity: 1
+                                    }, .35)
+                            ]),
+                    scene = new ScrollMagic.Scene({
+                                triggerElement: container,
+                                reverse: false
+                            })
+                            .setTween(tween)
+                            .addTo(app.scrollController);
+            },
+            contacts() {
+                let container = $('#contacts'),
+                    anim = {
+                        form: container.find('.contact-form'),
+                        text: container.find('[data-anim-stagger]'),
+                        title: {
+                            move: container.find('[data-title-move]'),
+                            overlay: container.find('.title__overlay'),
+                            timing: .75
+                        }
+                    },
+                    tween = new TimelineMax()
+                            .add([
+                                TweenMax.staggerTo([
+                                        anim.title.move, 
+                                        anim.title.overlay
+                                    ], anim.title.timing, { 
+                                        x: 0,
+                                        y: 0
+                                    }, anim.title.timing),
+                                TweenMax.to(anim.form, 1, { scaleY: 1 }),
+                                TweenMax.staggerTo(anim.text, .5, { 
+                                        x: 0, 
+                                        y: 0,
+                                        opacity: 1
+                                    }, .15)
+                            ]),
+                    scene = new ScrollMagic.Scene({
+                                triggerElement: container,
                                 reverse: false
                             })
                             .setTween(tween)
@@ -123,7 +279,7 @@ var app = {
                         }
                     },
                     {
-                        breakpoint: 768,
+                        breakpoint: 992,
                         settings: {
                             slidesToShow: 3
                         }
@@ -141,7 +297,11 @@ var app = {
             });
 
             $('.slick-slide').each(function() {
-                if ($(this).height() < maxHeight) {
+                if ( $(window).width() >= 992 && $(window).width() <= 1200 ) {
+                    return false;
+                }
+
+                if ($(this).height() < maxHeight ) {
                     $(this).css('margin', Math.ceil((maxHeight - $(this).height()) / 2) + 'px 0');
                 }
             });
@@ -187,17 +347,29 @@ var app = {
             });
         },
         scroll: function() {
-            $('body').on('mousewheel', function(e) {
+            let lastScrollTop = 0;
+
+            document.addEventListener('scroll', function (event) {
                 if ( $('body').hasClass('modal-open') ) {
                     return;
                 }
 
-                if ( e.originalEvent.wheelDelta > 0 ) {
+                let st = window.pageYOffset || document.documentElement.scrollTop;
+
+                if ( $(window).scrollTop() < 70 ) {
+                    $('.navbar-wrapper').removeClass('is-show is-fixed');
+
+                    return;
+                }
+
+                if ( st < lastScrollTop ) {
                     $('.navbar-wrapper').removeClass('not-top');
                 } else {
-                    $('.navbar-wrapper').addClass('not-top');
+                    $('.navbar-wrapper').addClass('not-top').addClass('is-fixed');
                 }
-            });
+
+                lastScrollTop = st;
+            }, false);
         }
     },
     input: function() {

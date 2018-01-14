@@ -1,6 +1,10 @@
 .certificates {
    margin-top: 70px;
 
+   & .section__content {
+      margin-top: 30px;
+   }
+
    &__ornament {
       top: -100px;
       left: -10%;
@@ -71,7 +75,7 @@
 }
 
 @media (max-width: $g-container-md) {
-   .section-certificates {
+   .certificates {
       display: none;
    }
 }

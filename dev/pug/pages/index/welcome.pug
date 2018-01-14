@@ -5,7 +5,7 @@ SECTION.section.first-screen(id="first-screen")
          .row
             .col-sm-12.col-md-6.col-lg-6.offset-xl-1
                .img-backdroped
-                  +b.image.__image
+                  +b.image(data-img-move="to-bottom")
                      +e.move
                         +e.overlay
                         img(src="static/img/content/about.jpg" alt="")
@@ -16,7 +16,7 @@ SECTION.section.first-screen(id="first-screen")
                   +e.P.text(data-anim-stagger="vertical") Возможно, в Вашей жизни наступил тот момент, когда Вы почувствовали, 
                      | что пора что-то менять. Это очень непростое решение. Вы искали варианты эффективной помощи
                      | и поэтому попали на сайт Психологического центра ALTERA.
-      +b.scroll(data-anim-stagger="vertical")
+      +b.scroll
          +e.mouse
    +b.ornament-animation.first-screen__ornament
       +e.inner

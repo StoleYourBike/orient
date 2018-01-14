@@ -2,10 +2,13 @@
    background-color: $white;
    box-shadow: 0 0 45px 0 rgba($black, 0.075);
    width: 100%;
-   @include fixed(0, 0, null, 0);
+   @include absolute(0, 0);
    z-index: 1000;
    transition: margin-top .3s ease-in-out;
-   transform: translateY(-#{$c-navbar-height}px);
+
+   &.is-fixed {
+      @include fixed(0, 0, null, 0);
+   }
 
    &.not-top {
       margin-top: -#{$c-navbar-height}px;
@@ -44,6 +47,14 @@
       & button {
          height: auto;
          text-transform: uppercase;
+         font-size: rem(10);
+         font-family: 'CirceExtraBold';
+         color: $g-title-color;
+         letter-spacing: rem(.5);
+      }
+
+      & .button__text {
+         transform: translateY(2px);
       }
    }
 }
@@ -95,7 +106,7 @@
 
 .menu-wrapper {
    background-color: $white;
-   @include fixed(0, 0, 0);
+   @include fixed(0, 0, 0, 0);
    @include size(100%);
    display: flex;
    z-index: 1001;

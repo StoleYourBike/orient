@@ -18,6 +18,8 @@
       }
 
       @media screen and (max-width: $g-container-lg) {
+         padding: 80px 0;
+         margin-bottom: 100px;
          flex-direction: column;
       }
    }
@@ -26,8 +28,8 @@
       background-color: $g-section-color;
       @include size(100%);
       @include absolute(0, -16.666667%);
-      transform: scaleX(0);
       transform-origin: 0 0;
+      transform: scaleX(0);
       z-index: -1;
 
       @media screen and (max-width: $g-container-lg) {
@@ -37,22 +39,6 @@
          width: auto;
       }
    }
-
-   // &__image {
-   //    overflow: hidden;
-   //    display: flex;
-   //    justify-content: center;
-   //    height: 250px;
-   //    width: 100%;
-
-   //    @media screen and (max-width: $g-container-lg) {
-   //       display: none;
-   //    }
-
-   //    & img {
-   //       height: 100%;
-   //    }
-   // }
 
    &__text {
       font-size: rem(15);
@@ -73,6 +59,12 @@
          @include size(40px);
          @include absolute(10px, -35px);
          transform: translateX(-100%);
+      }
+   }
+
+   &__image {
+      @media screen and (max-width: $g-container-lg) {
+         display: none;
       }
    }
 }
@@ -108,24 +100,30 @@
 }
 
 .news {
+   outline: none;
+
    &:not(:last-child) {
       padding-bottom: 1rem;
 
-      @media screen and (max-width: $g-container-md) {
+      @media screen and (max-width: $g-container-xl) {
+         padding-right: 25px;
+      }
+
+      @media screen and (max-width: $g-container-lg) {
          padding-bottom: 2rem;
       }
    }
 
    &__title {
       font: rem(16) $g-title-font;
-      line-height: rem(21);
+      line-height: rem(24);
       color: inherit;
    }
 
    &__date {
       font: rem(12) 'ProximaNova';
       color: $gray-600;
-      margin-bottom: .5rem;
+      margin-bottom: rem(10);
    }
 
    &__text {

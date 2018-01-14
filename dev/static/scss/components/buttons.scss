@@ -24,7 +24,7 @@
    }
 
    &_theme_action {
-      box-shadow: 0 0 0 1px $g-button-color;
+      border: 1px solid $g-button-color;
       font: rem(10) 'ProximaNova';
       color: $g-link-color;
       letter-spacing: rem(.5);
@@ -33,7 +33,6 @@
 
       &:hover {
          background-color: $g-button-color;
-         box-shadow: 0 0 0 1px $g-button-color;
          color: $white;
       }
    }

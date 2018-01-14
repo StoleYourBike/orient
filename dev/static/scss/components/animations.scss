@@ -11,3 +11,19 @@
 [data-anim-stagger=horizontal] {
    transform: translateX(90px);
 }
+
+[data-img-move=to-right] .image__overlay {
+   transform: translateX(-101%);
+   left: 101%;
+}
+
+[data-img-move=to-bottom] .image__overlay {
+   transform: translateY(-100%);
+   top: 100%;
+}
+
+[data-title-move=to-right] .title__overlay {
+   transform: translateX(-101%);
+   left: 101%;
+}
+

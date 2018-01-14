@@ -8,6 +8,10 @@
    & .col:nth-child(even) .step {
       background-color: $g-section-color;
    }
+
+   & .title {
+      line-height: rem(15);
+   }
 }
 
 .step {

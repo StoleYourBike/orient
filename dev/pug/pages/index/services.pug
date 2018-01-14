@@ -1,7 +1,10 @@
 +b.SECTION.section.services(id="services")
    .container
       +b.introduction
-         +e.H1.title Мои услуги
+         +b.title.__title
+            +e.move(data-title-move="to-right")
+               +e.H1.text Мои услуги
+                  +e.SPAN.overlay
       +e.content
          .row.no-gutters.services-list
             each object in content.services
