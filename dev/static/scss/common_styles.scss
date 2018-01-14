@@ -1,5 +1,7 @@
 .modal {
    &-header {
+      flex-direction: column;
+      
       & .close {
          @include absolute(0px, 100%, null);
          @include size(32px);

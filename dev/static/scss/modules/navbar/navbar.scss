@@ -46,15 +46,12 @@
 
       & button {
          height: auto;
-         text-transform: uppercase;
-         font-size: rem(10);
-         font-family: 'CirceExtraBold';
-         color: $g-title-color;
+         font-weight: 700;
          letter-spacing: rem(.5);
       }
 
       & .button__text {
-         transform: translateY(2px);
+         transform: translateY(4px);
       }
    }
 }
